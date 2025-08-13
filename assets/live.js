@@ -84,7 +84,7 @@
             if (yt && yt.tv && yt.tv.initializer) {
                 yt.tv.initializer(url);
             } else {
-                window.location = "https://web.archive.org/web/20160303220919/http://www.youtube.com/error?src=404";
+                console.error("error");
             }
         };
         
@@ -111,12 +111,12 @@
                 injectScript("loadStylesheets();");
             } else {
                 window.CLOSURE_NO_DEPS = true;
-                var cssPath = window.environment.tv_css || "/app-prod.css";
+                var cssPath = window.environment.tv_css || "https://2017tube.github.io/assets/app-prod.css";
                 loadStylesheet(r + cssPath);
                 loadScript(z ? r + "/chromecast-concat-bundle.js" : r + "/app-concat-bundle.js");
             }
         } else {
-            var cssPath = window.environment.tv_css || "/app-prod.css";
+            var cssPath = window.environment.tv_css || "https://2017tube.github.io/assets/app-prod.css";
             loadStylesheet(r + cssPath);
             loadScript(r + window.environment.tv_binary);
             if (k || l || m) loadScript(window.environment.player_url);
